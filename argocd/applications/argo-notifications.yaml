@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/bezkoder/nodejs-express-mysql.git'
+    repoURL: 'https://github.com/hknisci/project_root.git'
     targetRevision: HEAD
     path: argocd/notifications
   destination:
