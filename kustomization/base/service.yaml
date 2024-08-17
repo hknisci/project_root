@@ -2,13 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-express-mysql
-  labels:
-    app: nodejs-express-mysql
 spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: 3000
-      protocol: TCP
+  type: NodePort
   selector:
     app: nodejs-express-mysql
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30080
