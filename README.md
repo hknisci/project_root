@@ -1,7 +1,3 @@
-Certainly! Here's a more detailed and clear README file in English, which you can use to document your project.
-
----
-
 # Node.js Express Application Deployment with Kubernetes and ArgoCD
 
 This document outlines the approach taken to deploy a Node.js Express application on a Kubernetes cluster using Docker, Helm, and ArgoCD. The project includes automated CI/CD processes, Slack notifications, and updates using ArgoCD Image Updater.
