@@ -3,7 +3,7 @@ FROM node:14
 
 # Uygulama dosyalarını container içine kopyala
 WORKDIR /app
-COPY package*.json ./
+COPY nodejs-express-mysql/package*.json ./
 RUN npm install
 COPY . .
 
