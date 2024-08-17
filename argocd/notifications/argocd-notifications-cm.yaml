@@ -4,15 +4,21 @@ metadata:
   name: argocd-notifications-cm
   namespace: argocd
 data:
-  service.slack: |
-    url: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
-  trigger.on-sync-failed: |
-    - description: Application sync failed
-      send:
-        - slack
-      when: app.status.operationState.phase in ['Error', 'Failed']
-  trigger.on-sync-succeeded: |
-    - description: Application sync succeeded
-      send:
-        - slack
-      when: app.status.operationState.phase == 'Succeeded'
+  config.yaml: |
+    # Slack entegrasyonu için gerekli ayarlar
+    service.slack:
+      url: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+
+    # Sync başarısız olduğunda tetiklenecek bildirim
+    trigger.on-sync-failed:
+      - description: Application sync failed
+        send:
+          - slack
+        when: app.status.operationState.phase in ['Error', 'Failed']
+
+    # Sync başarılı olduğunda tetiklenecek bildirim
+    trigger.on-sync-succeeded:
+      - description: Application sync succeeded
+        send:
+          - slack
+        when: app.status.operationState.phase == 'Succeeded'
