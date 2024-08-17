@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nodejs-express
+  name: nodejs-express-mysql
   namespace: argocd
 spec:
   project: default
