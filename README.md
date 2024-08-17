@@ -14,8 +14,6 @@ The primary objective of this project is to deploy and manage a Node.js Express 
 - **Helm**: For packaging and deploying the application using Kubernetes manifests.
 - **Kustomize**: For managing different environments (e.g., development, staging, production).
 - **Slack**: For real-time notifications on application deployment status.
-- **Windows Firewall**: For securing access to the application.
-
 ## Steps and Solutions
 
 ### 1. Dockerizing the Node.js Express Application
@@ -112,7 +110,7 @@ data:
 
 ArgoCD Image Updater is configured to automatically detect new Docker images pushed to the registry and update the application in the Kubernetes cluster.
 
-### 6. Configuring Windows Firewall for Application Access
+### 6. Configuring for Application Access
 
 Windows Firewall is configured to allow external access to the application running on Kubernetes. The necessary ports are opened to ensure that the application is accessible from outside the Kubernetes cluster.
 
@@ -146,7 +144,3 @@ This approach provides a robust and scalable solution for managing modern cloud-
 - **ArgoCD Application Manifest**: Configures ArgoCD to manage the deployment.
 - **Slack Notification ConfigMap**: Sets up Slack notifications for deployment status.
 - **Kubernetes Service Manifest**: Defines how the application is exposed to external traffic.
-
----
-
-This README provides a clear and concise overview of the project, detailing the problem, the solution, and the implementation steps, along with the necessary manifest files.
