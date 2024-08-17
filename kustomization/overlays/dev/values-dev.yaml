@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: myregistry/nodejs-express-mysql
+  repository: hknsc/nodejs-express-mysql
   tag: "dev-latest"
 
 service:

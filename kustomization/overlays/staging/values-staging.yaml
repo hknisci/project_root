@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: myregistry/nodejs-express-mysql
+  repository: hknsc/nodejs-express-mysql
   tag: "staging-latest"
 
 service:

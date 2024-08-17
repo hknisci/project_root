@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: 'https://github.com/hknisci/project_root'
     targetRevision: HEAD
-    path: kustomization/overlays/prod  
+    path: kustomization/overlays/prod  # Veya ilgili yol
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: prod
+    namespace: prod  # Uygulamanın dağıtılacağı namespace
   syncPolicy:
     automated:
       prune: true

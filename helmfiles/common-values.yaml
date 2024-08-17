@@ -8,7 +8,7 @@ app:
 
 # Docker image ayarları
 image:
-  repository: myregistry/nodejs-express-mysql
+  repository: hknsc/nodejs-express-mysql
   pullPolicy: IfNotPresent
 
 # Log seviyeleri ve genel ortam değişkenleri

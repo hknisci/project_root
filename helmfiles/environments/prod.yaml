@@ -2,7 +2,7 @@ namespace: prod
 replicaCount: 3
 
 image:
-  repository: myregistry/nodejs-express-mysql
+  repository: hknsc/nodejs-express-mysql
   tag: "latest"
 
 service:

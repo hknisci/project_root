@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "nodejs-express.fullname" . }}
+  name: {{ include "nodejs-express-mysql.fullname" . }}
   labels:
-    app: {{ include "nodejs-express.name" . }}
+    app: {{ include "nodejs-express-mysql.name" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "nodejs-express.name" . }}
+      app: {{ include "nodejs-express-mysql.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "nodejs-express.name" . }}
+        app: {{ include "nodejs-express-mysql.name" . }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

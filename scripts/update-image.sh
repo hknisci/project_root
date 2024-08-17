@@ -12,7 +12,7 @@ fi
 
 # Deployment güncellenmesi
 echo "$APP_NAME uygulamasının imajı $NEW_IMAGE_TAG ile güncelleniyor..."
-kubectl set image deployment/$APP_NAME $APP_NAME=myregistry/nodejs-express-mysql:$NEW_IMAGE_TAG --namespace $NAMESPACE
+kubectl set image deployment/$APP_NAME $APP_NAME=hknsc/nodejs-express-mysql:$NEW_IMAGE_TAG --namespace $NAMESPACE
 
 # ArgoCD uygulama senkronizasyonu (opsiyonel)
 echo "ArgoCD uygulaması senkronize ediliyor..."

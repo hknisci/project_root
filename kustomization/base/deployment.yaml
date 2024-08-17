@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nodejs-express-mysql
-          image: myregistry/nodejs-express-mysql:latest
+          image: hknsc/nodejs-express-mysql:latest
           ports:
             - containerPort: 3000
           envFrom:
