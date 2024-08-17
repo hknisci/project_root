@@ -1,0 +1,13 @@
+bases:
+  - ../../base
+
+patchesStrategicMerge:
+  - replica-patch.yaml
+
+configMapGenerator:
+  - name: nodejs-express-mysql-configmap
+    literals:
+      - NODE_ENV=development
+      - DATABASE_HOST=dev-db-service
+      - DATABASE_USER=dev-admin
+      - DATABASE_PASSWORD=dev-password

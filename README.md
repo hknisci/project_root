@@ -1,1 +1,1 @@
-# project_root
+# Proje Açıklaması 

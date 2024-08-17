@@ -1,0 +1,6 @@
+rabbitmq:
+  auth:
+    username: admin
+    password: admin
+  persistence:
+    enabled: false

@@ -1,0 +1,11 @@
+replicaCount: 2
+
+image:
+  repository: myregistry/nodejs-express-mysql
+  tag: "staging-latest"
+
+service:
+  type: ClusterIP
+
+env:
+  NODE_ENV: "staging"

@@ -1,0 +1,25 @@
+namespace: prod
+replicaCount: 3
+
+image:
+  repository: myregistry/nodejs-express-mysql
+  tag: "latest"
+
+service:
+  type: LoadBalancer
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: nodejs-express-mysql.mycompany.com
+      paths:
+        - /
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi

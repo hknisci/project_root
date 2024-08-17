@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-express-mysql
+  labels:
+    app: nodejs-express-mysql
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs-express-mysql
+  template:
+    metadata:
+      labels:
+        app: nodejs-express-mysql
+    spec:
+      containers:
+        - name: nodejs-express-mysql
+          image: myregistry/nodejs-express-mysql:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: nodejs-express-mysql-configmap
+            - secretRef:
+                name: nodejs-express-mysql-secret
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi

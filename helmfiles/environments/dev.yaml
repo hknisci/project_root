@@ -1,0 +1,21 @@
+namespace: dev
+replicaCount: 1
+
+image:
+  repository: myregistry/nodejs-express-mysql
+  tag: "dev-latest"
+
+service:
+  type: NodePort
+  port: 3000
+
+ingress:
+  enabled: false
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi

@@ -1,0 +1,11 @@
+replicaCount: 3
+
+image:
+  repository: myregistry/nodejs-express-mysql
+  tag: "latest"
+
+service:
+  type: LoadBalancer
+
+env:
+  NODE_ENV: "production"

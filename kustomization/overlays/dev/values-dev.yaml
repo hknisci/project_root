@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: myregistry/nodejs-express-mysql
+  tag: "dev-latest"
+
+service:
+  type: NodePort
+
+env:
+  NODE_ENV: "development"

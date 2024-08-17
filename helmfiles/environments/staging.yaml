@@ -1,0 +1,25 @@
+namespace: staging
+replicaCount: 2
+
+image:
+  repository: myregistry/nodejs-express-mysql
+  tag: "staging-latest"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: staging.nodejs-express-mysql.local
+      paths:
+        - /
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

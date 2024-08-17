@@ -1,0 +1,46 @@
+replicaCount: 2
+
+image:
+  repository: myregistry/nodejs-express
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+  
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations: 
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: nodejs.local
+      paths: 
+        - /
+  tls: []
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+env:
+  NODE_ENV: "production"
+

@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+
+
+configMapGenerator:
+  - name: nodejs-express-mysql-configmap
+    literals:
+      - NODE_ENV=production
+      - DATABASE_HOST=prod-db-service
+      - DATABASE_USER=prod-admin
+      - DATABASE_PASSWORD=prod-password
