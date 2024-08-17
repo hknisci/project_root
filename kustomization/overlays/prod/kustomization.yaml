@@ -1,9 +1,9 @@
 resources:
   - ../../base
-
-
+  
 configMapGenerator:
   - name: nodejs-express-mysql-configmap
+    behavior: merge  # Bu satırı ekleyerek çakışmaları çözebilirsiniz
     literals:
       - NODE_ENV=production
       - DATABASE_HOST=prod-db-service
