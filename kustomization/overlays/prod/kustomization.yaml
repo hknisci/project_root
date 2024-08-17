@@ -1,9 +1,9 @@
 resources:
   - ../../base
-
-
+  
 configMapGenerator:
   - name: nodejs-express-mysql-configmap
+    behavior: merge  # Bu satırı ekleyerek merge işlemini belirtin
     literals:
       - NODE_ENV=production
       - DATABASE_HOST=prod-db-service
