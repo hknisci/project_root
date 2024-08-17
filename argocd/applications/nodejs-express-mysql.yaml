@@ -4,14 +4,20 @@ metadata:
   name: nodejs-express-mysql
   namespace: argocd
 spec:
-  project: default
   source:
     repoURL: 'https://github.com/hknisci/project_root'
+    path: .
     targetRevision: HEAD
-    path: kustomization/overlays/prod  # Veya ilgili yol
+    helm:
+      parameters:
+        - name: image.tag
+          value: latest
+    imageUpdater:
+      annotations:
+        argocd-image-updater.argoproj.io/image-list: hknsc/nodejs-express-mysql
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: prod  # Uygulamanın dağıtılacağı namespace
+    namespace: prod
   syncPolicy:
     automated:
       prune: true
